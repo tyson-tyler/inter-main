@@ -2,7 +2,6 @@ import { INFINITE_SCROLL_PAGINATION_RESULTS } from "../../config";
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import PostFeed from "./PostFeed";
-import { notFound } from "next/navigation";
 
 const CustomFeed = async () => {
   const session = await getAuthSession();
