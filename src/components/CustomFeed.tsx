@@ -8,7 +8,12 @@ const CustomFeed = async () => {
   const session = await getAuthSession();
 
   // only rendered if session exists, so this will not happen
-  if (!session) return notFound();
+  if (!session)
+    return (
+      <h1 className="w-full flex justify-center items-center text-center usespan">
+        Please Sign Up First .
+      </h1>
+    );
 
   const followedCommunities = await db.subscription.findMany({
     where: {
