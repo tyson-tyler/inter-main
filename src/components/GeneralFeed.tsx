@@ -13,7 +13,7 @@ const GeneralFeed = async () => {
       comments: true,
       subreddit: true,
     },
-    take: INFINITE_SCROLL_PAGINATION_RESULTS,
+    take: INFINITE_SCROLL_PAGINATION_RESULTS, // 4 to demonstrate infinite scroll, should be higher in production
   });
 
   return <PostFeed initialPost={posts} />;
