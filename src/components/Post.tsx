@@ -6,6 +6,7 @@ import { FC, useRef } from "react";
 import EditorOutput from "./EditOutput";
 import PostVoteClient from "./post-vote/PostVoteClient";
 import Image from "next/image";
+import Link from "next/link";
 
 type PartialVote = Pick<Vote, "type">;
 interface PostProps {
@@ -43,7 +44,7 @@ const Post: FC<PostProps> = ({
                     className="rounded-full mr-2"
                   />
                 </div>
-                <a href={`/r/${subredditName}`}>{subredditName}</a>
+                <Link href={`/r/${subredditName}`}>{subredditName}</Link>
               </>
             ) : null}
             <span className="mr-2 ml-2 hover:text-white transition">
@@ -66,19 +67,23 @@ const Post: FC<PostProps> = ({
               {pRef.current?.clientHeight === 160 ? (
                 <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-gray-700 to-transparent"></div>
               ) : null}
+              <div className="bg-gray-800 z-50 text-sm px-3 pb-2 pt-2 flex justify-between items-center rounded-lg">
+                <Link
+                  href={`/r/${subredditName}/post/${post.id}`}
+                  className="flex"
+                >
+                  <MessageCircle className="text-white h-5 w-5 mr-2" />{" "}
+                  {commentAmt}
+                </Link>
+                <PostVoteClient
+                  postId={post.id}
+                  initialVoteAmt={voteAmt}
+                  initialVote={currentVote?.type}
+                />
+              </div>
             </div>
           </a>
         </div>
-      </div>
-      <div className="bg-gray-800 z-50 text-sm px-3 pb-2 pt-2 flex justify-between items-center rounded-lg">
-        <a href={`/r/${subredditName}/post/${post.id}`} className="flex">
-          <MessageCircle className="text-white h-5 w-5 mr-2" /> {commentAmt}
-        </a>
-        <PostVoteClient
-          postId={post.id}
-          initialVoteAmt={voteAmt}
-          initialVote={currentVote?.type}
-        />
       </div>
     </div>
   );
