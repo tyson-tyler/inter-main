@@ -36,15 +36,17 @@ const Post: FC<PostProps> = ({
             {subredditName ? (
               <>
                 <div className="flex justify-center items-center">
-                  <Image
-                    src={`${post.author.image}`}
-                    alt="hello"
-                    width={35}
-                    height={35}
-                    className="rounded-full mr-2"
-                  />
+                  <Link href={`/r/${subredditName}`}>
+                    <Image
+                      src={`${post.author.image}`}
+                      alt="hello"
+                      width={35}
+                      height={35}
+                      className="rounded-full mr-2"
+                    />
+                    {subredditName}
+                  </Link>
                 </div>
-                <Link href={`/r/${subredditName}`}>{subredditName}</Link>
               </>
             ) : null}
             <span className="mr-2 ml-2 hover:text-white transition">
@@ -54,7 +56,7 @@ const Post: FC<PostProps> = ({
             {formatTimeToNow(new Date(post.createdAt))}
           </div>
 
-          <a href={`/r/${subredditName}/post/${post.id}`}>
+          <Link href={`/r/${subredditName}/post/${post.id}`}>
             <h1 className="text-lg font-semibold py-2 leading-6 text-white">
               {post.title}
             </h1>
@@ -82,7 +84,7 @@ const Post: FC<PostProps> = ({
                 />
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

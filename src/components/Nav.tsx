@@ -24,7 +24,7 @@ const Nav = async () => {
         </Link>
 
         <div className="flex justify-center items-center mr-2">
-          <Link href={"https://coming-sand.vercel.app/"}>
+          <Link href={"https://myaimix.com"}>
             <Video className="w-6 h-6 text-white hover:text-gray-400 transition cursor-pointer" />
           </Link>
           <SheetDemo />

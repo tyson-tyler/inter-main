@@ -89,12 +89,12 @@ const Layout = async ({
                 <div className="text-center mt-4">
                   <h1 className="text-lg font-semibold">
                     {" "}
-                    <a
+                    <Link
                       href={`/r/${subreddit.name}`}
                       className="hover:transition hover:text-white no-underline text-gray-400 cursor-pointer"
                     >
                       {subreddit.name}
-                    </a>
+                    </Link>
                   </h1>
                   <div className="flex flex-row justify-around">
                     <p className="text-sm text-gray-500">
