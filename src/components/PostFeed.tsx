@@ -48,7 +48,7 @@ const PostFeed: FC<PostFeedProps> = ({ initialPost, subredditName }) => {
   }, [entry, fetchNextPage]);
   const posts = data?.pages.flatMap((page) => page) ?? initialPost;
   return (
-    <ul className="w-full mx-auto gap-3 lg:columns-3 md:columns-2 sm:columns-1">
+    <ul className="w-full mx-auto gap-3">
       {posts.map((post, index) => {
         const votesAmt = post.votes.reduce((acc, vote) => {
           if (vote.type === "UP") return acc + 1;

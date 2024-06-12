@@ -65,7 +65,7 @@ const SearchBar: FC<SearchBarProps> = ({}) => {
   return (
     <Command
       ref={commandRef}
-      className="relative rounded-lg bg-gray-800 text-white max-w-lg z-50 overflow-visible h-15 mt-4"
+      className="relative rounded-lg bg-gray-800   text-white  max-w-lg z-50 overflow-visible h-15 mt-4"
     >
       <CommandInput
         onValueChange={(text) => {
@@ -78,7 +78,7 @@ const SearchBar: FC<SearchBarProps> = ({}) => {
       />
       <div className="block">
         {input.length > 0 && (
-          <CommandList className="absolute bg-gray-700 text-white hover:bg-gray-600 transition top-full inset-x-0 shadow rounded-b-md">
+          <CommandList className="absolute bg-gray-800   text-white  hover:bg-gray-600 transition top-full inset-x-0 shadow rounded-b-md">
             {isFetched && <CommandEmpty>No results found.</CommandEmpty>}
             {(queryResults?.length ?? 0) > 0 ? (
               <CommandGroup heading="Prompt">

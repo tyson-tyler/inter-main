@@ -3,10 +3,11 @@
 import { FC } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Skeleton from "./skeleton";
 
 const Output = dynamic(
   async () => (await import("editorjs-react-renderer")).default,
-  { ssr: false }
+  { ssr: false, loading: () => <Skeleton /> }
 );
 
 interface EditorOutputProps {
@@ -34,6 +35,7 @@ const EditorOutput: FC<EditorOutputProps> = ({ content }) => {
     />
   );
 };
+
 function CustomImageRenderer({ data }: any) {
   const src = data.file.url;
 

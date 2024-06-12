@@ -16,11 +16,11 @@ export function SheetDemo() {
     <Sheet>
       <SheetTrigger asChild>
         <Button variant="ghost">
-          <Search className="w-6 h-6 text-gray-50" />
+          <Search className="w-6 h-6 text-gray-50 " />
         </Button>
       </SheetTrigger>
       <SheetClose asChild>
-        <SheetContent className="bg-gray-800 text-white">
+        <SheetContent className="bg-gray-800  text-white ">
           <SheetHeader>
             <SheetTitle className="text-white">Search Prompt</SheetTitle>
           </SheetHeader>

@@ -31,7 +31,7 @@ const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="bg-gray-800 text-white border-none w-[250px]"
+        className="dark:bg-gray-800 bg-gray-50  dark:text-white text-black border-none w-[250px]"
         align="end"
       >
         <div className="flex items-center justify-start gap-2 p-2">
@@ -45,15 +45,21 @@ const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
           </div>
         </div>
 
-        <DropdownMenuSeparator />
+        <DropdownMenuSeparator className="dark:bg-gray-800 bg-gray-50  dark:text-white text-black" />
 
         <DropdownMenuItem asChild>
-          <Link href="/">
+          <Link
+            href="/"
+            className="dark:bg-gray-800 bg-gray-50  dark:text-white text-black hover:bg-gray-300 hover:dark:bg-gray-700 hover:cursor-pointer"
+          >
             <Code className="mr-3" /> Prompt
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link href="/r/create">
+          <Link
+            href="/r/create"
+            className="dark:bg-gray-800 bg-gray-50  dark:text-white text-black hover:bg-gray-300 hover:dark:bg-gray-700 hover:cursor-pointer"
+          >
             <PlusCircle className="mr-3" /> Create Prompt
           </Link>
         </DropdownMenuItem>

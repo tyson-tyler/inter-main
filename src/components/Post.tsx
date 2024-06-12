@@ -29,14 +29,17 @@ const Post: FC<PostProps> = ({
 }) => {
   const pRef = useRef<HTMLDivElement>(null);
   return (
-    <div className="item">
-      <div className="px-6 py-4 flex justify-between">
+    <div className="item bg-gray-800 rounded-md">
+      <div className="px-6 py-4 flex justify-between mb-7">
         <div className="w-0 flex-1">
-          <div className="mt-1 text-xs text-gray-600 flex items-center">
+          <div className="mt-1 text-xs text-gray-600 flex items-center justify-between">
             {subredditName ? (
               <>
-                <div className="flex justify-center items-center">
-                  <Link href={`/r/${subredditName}`}>
+                <div className="flex justify-between items-center">
+                  <Link
+                    href={`/r/${subredditName}`}
+                    className="flex justify-between items-center"
+                  >
                     <Image
                       src={`${post.author.image}`}
                       alt="hello"
@@ -44,16 +47,21 @@ const Post: FC<PostProps> = ({
                       height={35}
                       className="rounded-full mr-2"
                     />
-                    {subredditName}
                   </Link>
+                  <div className="flex flex-col">
+                    <span className="hover:text-white transition">
+                      {" "}
+                      {post.author.name}{" "}
+                    </span>{" "}
+                    <div className="flex flex-col">{subredditName}</div>
+                  </div>
                 </div>
               </>
             ) : null}
-            <span className="mr-2 ml-2 hover:text-white transition">
+            <div className="flex flex-col">
               {" "}
-              Post by {post.author.name}
-            </span>{" "}
-            {formatTimeToNow(new Date(post.createdAt))}
+              {formatTimeToNow(new Date(post.createdAt))}
+            </div>
           </div>
 
           <Link href={`/r/${subredditName}/post/${post.id}`}>
