@@ -60,7 +60,7 @@ const PostFeed: FC<PostFeedProps> = ({ initialPost, subredditName }) => {
         );
         if (index === posts.length - 1) {
           return (
-            <li className="items" key={index}>
+            <li className="" key={index}>
               <Post
                 currentVote={currentVote}
                 voteAmt={votesAmt}

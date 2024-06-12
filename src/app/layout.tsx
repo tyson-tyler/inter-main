@@ -41,7 +41,7 @@ export default function RootLayout({
             <LeftBar />
 
             {children}
-            <Goal />
+            <LeftBar />
           </div>
         </Providers>
         <Toaster />
